@@ -70,5 +70,7 @@ span{
 }
 a{
     font-size: clamp(14px, 2vw, 20px );
+    text-decoration:none;
+    color:var(--font-body)
 }
 `;
