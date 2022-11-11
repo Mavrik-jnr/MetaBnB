@@ -8,6 +8,11 @@ export const Boilerplate = createGlobalStyle`
     --font-select: #333;
     --black: #000;
     --white: #fff;
+    --footer-bg: #1d1d1e;
+    --modal-bg:#4040404D;
+    color:--font-body;
+    
+
 
 }
 h1{
