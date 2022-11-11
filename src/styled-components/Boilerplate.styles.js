@@ -3,6 +3,13 @@ import { createGlobalStyle } from "styled-components";
 export const Boilerplate = createGlobalStyle`
 *{
     font-family: 'Red Rose', sans-serif;
+    
+    color:--font-body;
+    
+
+
+}
+*{
     --primary:#A02279;
     --font-body:#434343;
     --font-select: #333;
@@ -10,10 +17,8 @@ export const Boilerplate = createGlobalStyle`
     --white: #fff;
     --footer-bg: #1d1d1e;
     --modal-bg:#4040404D;
-    color:--font-body;
-    
-
-
+    --wallet-outline:#CFD8DC;
+    --wallet-fill:#F8F9FA;
 }
 h1{
     font-size: 56px;
