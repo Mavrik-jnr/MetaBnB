@@ -69,7 +69,7 @@ span{
 
 }
 a{
-    font-size: clamp(14px, 2vw, 20px );
+    font-size: clamp(14px, 1.6vw, 20px );
     text-decoration:none;
     color:var(--font-body)
 }
