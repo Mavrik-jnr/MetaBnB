@@ -3,10 +3,10 @@ import { NavLink } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import styled from "styled-components";
-import Button from "./Button";
+import Button, { PrimaryButton } from "./Button";
 import LogoImg from "../images/Logo.svg";
 
-function Header() {
+function Header({ setModal }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mobile, setMobile] = useState(window.innerWidth);
   useEffect(() => {
@@ -30,9 +30,13 @@ function Header() {
           <NavLink>Community</NavLink>
           {mobile <= 600 && (
             <MenuBarBtn>
-              <Button style={{ flexShrink: 1 }} type="primary">
+              <ButtonH
+                style={{ flexShrink: 1 }}
+                type="primary"
+                onClick={setModal}
+              >
                 Connect Wallet
-              </Button>
+              </ButtonH>
             </MenuBarBtn>
           )}
         </MenuBar>
@@ -48,9 +52,15 @@ function Header() {
       <MobileMenuWrapper>
         {mobile >= 600 && (
           <div className="btn">
-            <Button style={{ flexShrink: 1 }} type="primary">
+            <ButtonH
+              style={{ flexShrink: 1 }}
+              type="primary"
+              onClick={() => {
+                setModal(true);
+              }}
+            >
               Connect Wallet
-            </Button>
+            </ButtonH>
           </div>
         )}
         {isMenuOpen ? (
@@ -116,6 +126,7 @@ const MobileMenuWrapper = styled.div`
 
 const MenuBar = styled.div`
   display: ${(props) => (props.mobile <= 1175 ? "grid" : "none")};
+
   position: absolute;
   top: 8.5vh;
   gap: 0px;
@@ -127,7 +138,7 @@ const MenuBar = styled.div`
   z-index: 999;
   width: 300px;
   /* padding: 10px; */
-  height: 400px;
+  height: max-content;
   right: -30px;
   border-radius: 10px;
   box-shadow: 0px 1px 4px 2px #3333;
@@ -144,8 +155,8 @@ const MenuBar = styled.div`
     /* padding-bottom: 30px;  */
     /* height: 80px; */
     &:hover {
-      background-color: var(--primary);
-      color: var(--white);
+      background-color: #ece3ef;
+      color: var(--primary);
     }
   }
   & a:first-child {
@@ -161,11 +172,14 @@ const MenuBar = styled.div`
 const MenuBarBtn = styled.div`
   display: flex;
   align-items: center;
-  /* justify-content: center; */
-  padding-left: 20px;
+  justify-content: center;
+  /* padding-left: 20px; */
 
   & button {
-    width: 100%;
+    width: 80%;
     padding: 20px;
   }
+`;
+const ButtonH = styled(PrimaryButton)`
+  cursor: pointer;
 `;

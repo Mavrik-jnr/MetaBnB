@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-function Button({ children, type }) {
+function Button({ children, type, setModal }) {
   return (
     <div>
       {type === "primary" ? (
