@@ -14,7 +14,7 @@ function Button({ children, type }) {
 
 export default Button;
 
-const PrimaryButton = styled.button`
+export const PrimaryButton = styled.button`
   background-color: var(--primary);
   color: var(--white);
   padding: 12px 20px;
