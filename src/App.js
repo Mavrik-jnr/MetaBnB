@@ -11,6 +11,7 @@ import Search from "./components/Search";
 
 function App() {
   const [scrollH, setscrollH] = useState();
+  const [isModalOpen, setModal] = useState(false);
   const handleScroll = () => {
     setscrollH(window.scrollY);
   };
@@ -19,9 +20,11 @@ function App() {
   };
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("", handleScroll, { passive: true });
+
     // window.onscroll(screenX)
-    return () => window.removeEventListener("scroll", updatePosition);
+    return () => {
+      window.removeEventListener("scroll", updatePosition);
+    };
   }, []);
 
   return (
@@ -29,7 +32,9 @@ function App() {
       <HeaderWrapper scrollH={scrollH}>
         <Header />
       </HeaderWrapper>
+
       <HeroSection>
+        {/* <Modal /> */}
         <HeroFlex>
           <HeroTextWrapper>
             <h1>
@@ -133,4 +138,14 @@ const HeroTextWrapper = styled.div`
   flex-direction: column;
   gap: 48px;
   /* align-items: flex-start; */
+`;
+
+const Modal = styled.div`
+  position: absolute;
+  z-index: 1000;
+
+  background-color: red;
+  width: 30%;
+  height: 30%;
+  top: 75%;
 `;

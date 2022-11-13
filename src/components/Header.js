@@ -1,12 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import styled from "styled-components";
 import Button from "./Button";
 import LogoImg from "../images/Logo.svg";
 
 function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mobile, setMobile] = useState(window.innerWidth);
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setMobile(window.innerWidth);
+    });
+    return () => {
+      window.removeEventListener("resize", () => {
+        setMobile(window.innerWidth);
+      });
+    };
+  }, [mobile]);
+
   return (
     <FlexHeader>
+      {isMenuOpen && (
+        <MenuBar mobile={mobile}>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/place-to-stay">Place to stay</NavLink>
+          <NavLink>NFTs</NavLink>
+          <NavLink>Community</NavLink>
+          {mobile <= 600 && (
+            <MenuBarBtn>
+              <Button style={{ flexShrink: 1 }} type="primary">
+                Connect Wallet
+              </Button>
+            </MenuBarBtn>
+          )}
+        </MenuBar>
+      )}
       <img style={{ flexShrink: 1 }} src={LogoImg} alt="Logo" />
       <Links>
         <NavLink to="/">Home</NavLink>
@@ -14,9 +44,29 @@ function Header() {
         <NavLink>NFTs</NavLink>
         <NavLink>Community</NavLink>
       </Links>
-      <Button style={{ flexShrink: 1 }} type="primary">
-        Connect Wallet
-      </Button>
+
+      <MobileMenuWrapper>
+        {mobile >= 600 && (
+          <div className="btn">
+            <Button style={{ flexShrink: 1 }} type="primary">
+              Connect Wallet
+            </Button>
+          </div>
+        )}
+        {isMenuOpen ? (
+          <CloseIcon
+            onClick={() => {
+              setIsMenuOpen(false);
+            }}
+          />
+        ) : (
+          <MenuIcon
+            onClick={() => {
+              setIsMenuOpen(true);
+            }}
+          />
+        )}
+      </MobileMenuWrapper>
     </FlexHeader>
   );
 }
@@ -25,10 +75,15 @@ export default Header;
 
 const FlexHeader = styled.header`
   display: flex;
+  position: relative;
 
   align-items: center;
 
   width: 86%;
+
+  @media screen and (max-width: 1175px) {
+    justify-content: space-between;
+  }
 `;
 const Links = styled.div`
   display: flex;
@@ -38,4 +93,79 @@ const Links = styled.div`
   gap: clamp(8px, 3vw, 48px);
   flex: 1;
   flex-shrink: 1;
+
+  @media screen and (max-width: 1175px) {
+    display: none;
+  }
+`;
+const MobileMenuWrapper = styled.div`
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  & svg {
+    display: none;
+    cursor: pointer;
+    font-size: 32px;
+    color: #333;
+    @media screen and (max-width: 1175px) {
+      display: block;
+    }
+  }
+`;
+
+const MenuBar = styled.div`
+  display: ${(props) => (props.mobile <= 1175 ? "grid" : "none")};
+  position: absolute;
+  top: 8.5vh;
+  gap: 0px;
+  align-items: stretch;
+  /* justify-content: center; */
+  /* text-align: center; */
+  grid-auto-rows: 80px;
+  background-color: white;
+  z-index: 999;
+  width: 300px;
+  /* padding: 10px; */
+  height: 400px;
+  right: -30px;
+  border-radius: 10px;
+  box-shadow: 0px 1px 4px 2px #3333;
+  /* align-items: start; */
+
+  & a {
+    display: flex;
+    align-items: center;
+    margin: 0px;
+    padding-top: 0px;
+    border-bottom: 1px solid #3333;
+    padding-left: 30px;
+    /* border-radius: 8px; */
+    /* padding-bottom: 30px;  */
+    /* height: 80px; */
+    &:hover {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+  }
+  & a:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  &a:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+`;
+
+const MenuBarBtn = styled.div`
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  padding-left: 20px;
+
+  & button {
+    width: 100%;
+    padding: 20px;
+  }
 `;

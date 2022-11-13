@@ -9,6 +9,7 @@ const Section = styled.section`
 `;
 export const HeroSection = styled(Section)`
   /* display: flex; */
+  position: relative;
 
   /* align-items: flex-start; */
   /* justify-content: center; */
