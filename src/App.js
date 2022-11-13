@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Button from "./components/Button";
+
 import Header from "./components/Header";
 import { HeroFlex, HeroSection } from "./styled-components/Layout.styles";
 import hero1 from "./images/hero/hero1.svg";
@@ -8,6 +7,7 @@ import hero2 from "./images/hero/hero2.svg";
 import hero3 from "./images/hero/hero3.svg";
 import hero4 from "./images/hero/hero4.svg";
 import { useEffect, useState } from "react";
+import Search from "./components/Search";
 
 function App() {
   const [scrollH, setscrollH] = useState();
@@ -30,23 +30,31 @@ function App() {
         <Header />
       </HeaderWrapper>
       <HeroSection>
-        <div className="App">
-          <HeroFlex>
+        <HeroFlex>
+          <HeroTextWrapper>
             <h1>
               Rent a <span>Place</span> away from <span>Home</span> in the{" "}
               <span>Metaverse</span>
             </h1>
-            <HeroImageWrapper className="">
+            <h3>
+              we provide you access to luxury and affordable houses in the
+              metaverse, get a chance to turn your imagination to reality at
+              your comfort zone
+            </h3>
+            <Search />
+          </HeroTextWrapper>
+          <HeroImageWrapper className="">
+            <Left>
               <img src={hero1} alt="" />
-              <img src={hero2} alt="" />
               <img src={hero3} alt="" />
+            </Left>
+
+            <Right>
+              <img src={hero2} alt="" />
               <img src={hero4} alt="" />
-            </HeroImageWrapper>
-          </HeroFlex>
-          <a href="/">Hello</a>
-          <Link to="/com">Hell</Link>
-          <Button type="primary">Connect Wallet</Button>
-        </div>
+            </Right>
+          </HeroImageWrapper>
+        </HeroFlex>
       </HeroSection>
     </AppBody>
   );
@@ -74,5 +82,55 @@ const HeaderWrapper = styled.div`
   align-items: center;
   box-shadow: ${(props) =>
     props.scrollH > 21.5 ? "0px 1px 4px 1px #3333" : "0px 0px 0px 0px"};
+  z-index: 999;
 `;
-const HeroImageWrapper = styled.div``;
+const HeroImageWrapper = styled.div`
+  display: flex;
+  align-self: center;
+  position: relative;
+  bottom: -30px;
+  flex-shrink: 1;
+  & img {
+    width: clamp(100px, 16vw, 250px);
+  }
+  gap: 8px;
+  @media screen and (max-width: 1175px) {
+    justify-content: center;
+    gap: 24px;
+
+    & img {
+      width: 35vw;
+    }
+  }
+`;
+const Left = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  top: 10px;
+  gap: 8px;
+  @media screen and (max-width: 1175px) {
+    top: 0;
+  }
+`;
+
+const Right = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: -80px;
+  gap: 8px;
+  @media screen and (max-width: 1175px) {
+    top: -50px;
+  }
+`;
+
+const HeroTextWrapper = styled.div`
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-direction: column;
+  gap: 48px;
+  /* align-items: flex-start; */
+`;

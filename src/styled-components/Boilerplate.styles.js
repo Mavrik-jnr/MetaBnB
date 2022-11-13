@@ -26,38 +26,44 @@ h1{
     line-height:1.4;
     letter-spacing:-2%;
     font-weight: 400;
+    margin:0px;
     
 }
 h2{
     font-size:48px;
     line-height:1.4;
+    margin:0px;
 }
 h3 {
     font-size:24px;
     line-height:1.4;
-    font-weight:400
+    font-weight:400;
+    margin:0px;
 }
 h4{
     font-size:18px;
     color:var(--white);
     font-weight:400;
+    margin:0px;
 }
 h5{
     font-size:14px;
 
     color:var(--white);
     font-weight:400;
-
+    margin:0px;
 }
 h6{
     font-size:12px;
     line-height:1.4px;
+    margin:0px;
 }
 
 p{
     font-size:16px;
     line-height:1.4;
     font-weight:400;
+    margin:0px;
 }
 span{
     font-size: 56px;
