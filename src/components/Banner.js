@@ -3,9 +3,6 @@ import styled from "styled-components";
 import { BannerWrapper } from "../styled-components/Layout.styles";
 import Button from "./Button";
 import collage from "../images/CTA/collage.svg";
-import left from "../images/CTA/s3.svg";
-import top from "../images/CTA/s4.svg";
-import right from "../images/CTA/susan 4.svg";
 
 function Banner() {
   return (
@@ -22,8 +19,6 @@ function Banner() {
         </BannerText>
         <BannerImageStew>
           <img src={collage} alt="" />
-          {/* <img src={top} alt="" />
-          <img src={right} alt="" /> */}
         </BannerImageStew>
       </BannerContent>
     </BannerWrapper>
@@ -78,6 +73,6 @@ const BannerImageStew = styled.div`
   }
   & img {
     /* position: absolute; */
-    width: clamp(300px, 50vw, 700px);
+    width: clamp(350px, 53vw, 700px);
   }
 `;
