@@ -5,6 +5,7 @@ export const Boilerplate = createGlobalStyle`
     font-family: 'Red Rose', sans-serif;
     
     color:--font-body;
+    box-sizing:border-box;
     
 
 

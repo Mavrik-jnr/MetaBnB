@@ -130,16 +130,46 @@ function App() {
 
 export default App;
 
+const NftWrapper = styled(Section)`
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+
+  margin-top: 60px;
+  box-sizing: border-box;
+  /* width: 100%; */
+  & h2 {
+    text-align: center;
+  }
+`;
+
+const NftGrid = styled.div`
+  display: grid;
+  width: 100%;
+  gap: 24px;
+  box-sizing: border-box;
+  grid-template-columns: repeat(4, 1fr);
+  align-content: center;
+  justify-items: center;
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: repeat(2, auto);
+  }
+  @media screen and (max-width: 700px) {
+    grid-template-columns: repeat(1, auto);
+  }
+`;
+
 const AppBody = styled.main`
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 200vh;
+  /* height: 200vh; */
 `;
 
 const HeaderWrapper = styled.div`
-  position: ${(props) => (props.scrollH > 21.5 ? "sticky" : "relative")};
+  position: ${(props) => (props.scrollH > 21.5 ? "fixed" : "relative")};
   top: ${(props) => (props.scrollH > 21.5 ? "0px" : "21.5px")};
   display: flex;
   width: 100%;
@@ -286,25 +316,9 @@ const Companies = styled.div`
   margin-top: 100px;
   background-color: var(--primary);
   width: 100%;
+  gap: 24px;
   padding: 10px 100px;
   & img {
     width: clamp(100px, 20vw, 100%);
   }
-`;
-
-const NftWrapper = styled(Section)`
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-  align-items: center;
-  margin-top: 60px;
-  & h2 {
-    /* margin-bottom: 60px; */
-  }
-`;
-
-const NftGrid = styled.div`
-  display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(4, 1fr);
 `;

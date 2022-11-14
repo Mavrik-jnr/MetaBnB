@@ -51,7 +51,7 @@ function Footer() {
             <Link>Road map</Link>
             <Link>Creators</Link>
             <Link>Career</Link>
-            <Link>Contatct us</Link>
+            <Link>Contact us</Link>
           </div>
         </FooterSubLinks>
       </FooterLinks>
@@ -73,6 +73,14 @@ const FooterWrapper = styled.footer`
   padding-bottom: 37px;
   padding-right: 32px;
   background: #1d1d1e;
+  height: max-content;
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 100px;
+    padding-left: 30px;
+  }
 `;
 
 const Branding = styled.div`
@@ -107,8 +115,17 @@ const Socials = styled.div`
 
 const FooterLinks = styled.div`
   display: flex;
-  flex: 1;
+
   gap: clamp(50px, 10vw, 217px);
+  width: min(100%, 1000px);
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    /* flex-direction: row; */
+
+    /* gap: 100px; */
+  }
 `;
 const FooterSubLinks = styled.div`
   display: flex;

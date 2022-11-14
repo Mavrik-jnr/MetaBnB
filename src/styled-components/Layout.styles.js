@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Section = styled.section`
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   /* align-items: center; */
   width: 86%;
   /* max-width: 1240px; */
@@ -33,10 +33,14 @@ export const HeroFlex = styled.div`
 
 export const BannerWrapper = styled(Section)`
   background-color: var(--primary);
-  height: 100vh;
+  margin-top: 60px;
+  /* height: 100vh; */
   width: 100%;
 
-  display: flex;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 1175px) {
+    align-items: stretch;
+    justify-content: flex-start;
+  }
 `;

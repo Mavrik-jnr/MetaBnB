@@ -52,7 +52,7 @@ const CardWrapper = styled.div`
   border: 1px solid #d7d7d7;
   padding: 16px;
   border-radius: 15px;
-  width: 292px;
+  width: clamp(245px, 100%, 350px);
   height: 372px;
 `;
 const Ratings = styled.div`
