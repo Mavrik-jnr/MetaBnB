@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { BannerWrapper } from "../styled-components/Layout.styles";
 import Button from "./Button";
-import collage from "../images/CTA/collage.svg";
+import collage from "../images/CTA/collage.png";
 
 function Banner() {
   return (
