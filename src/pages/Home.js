@@ -16,6 +16,13 @@ import hero2 from "../images/hero/hero2.svg";
 import hero3 from "../images/hero/hero3.svg";
 import hero4 from "../images/hero/hero4.svg";
 import aise2 from "../images/NFT/aise 2.png";
+import aise from "../images/NFT/aise.png";
+import s1 from "../images/NFT/s1.png";
+import s16 from "../images/NFT/s16.png";
+import s11 from "../images/NFT/s11.png";
+import s5 from "../images/NFT/s5.png";
+import druids from "../images/NFT/druids.png";
+import dvn from "../images/NFT/dvn.png";
 function Home() {
   return (
     <>
@@ -54,14 +61,14 @@ function Home() {
       <NftWrapper>
         <h2>Inspiration for your next adventure</h2>
         <NftGrid>
+          <NftCard img={druids} />
+          <NftCard img={aise} />
+          <NftCard img={s1} />
           <NftCard img={aise2} />
-          <NftCard img={aise2} />
-          <NftCard img={aise2} />
-          <NftCard img={aise2} />
-          <NftCard img={aise2} />
-          <NftCard img={aise2} />
-          <NftCard img={aise2} />
-          <NftCard img={aise2} />
+          <NftCard img={dvn} />
+          <NftCard img={s5} />
+          <NftCard img={s16} />
+          <NftCard img={s11} />
         </NftGrid>
       </NftWrapper>
       <Banner />
