@@ -24,10 +24,38 @@ function Header({ setModal }) {
     <FlexHeader>
       {isMenuOpen && (
         <MenuBar mobile={mobile}>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/place-to-stay">Place to stay</NavLink>
-          <NavLink to="/place-to-stay">NFTs</NavLink>
-          <NavLink to="/place-to-stay">Community</NavLink>
+          <NavLink
+            to="/"
+            onClick={() => {
+              setIsMenuOpen(false);
+            }}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/place-to-stay"
+            onClick={() => {
+              setIsMenuOpen(false);
+            }}
+          >
+            Place to stay
+          </NavLink>
+          <NavLink
+            to="/place-to-stay"
+            onClick={() => {
+              setIsMenuOpen(false);
+            }}
+          >
+            NFTs
+          </NavLink>
+          <NavLink
+            to="/place-to-stay"
+            onClick={() => {
+              setIsMenuOpen(false);
+            }}
+          >
+            Community
+          </NavLink>
           {mobile <= 600 && (
             <MenuBarBtn>
               <ButtonH
