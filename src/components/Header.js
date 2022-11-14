@@ -26,8 +26,8 @@ function Header({ setModal }) {
         <MenuBar mobile={mobile}>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/place-to-stay">Place to stay</NavLink>
-          <NavLink>NFTs</NavLink>
-          <NavLink>Community</NavLink>
+          <NavLink to="/place-to-stay">NFTs</NavLink>
+          <NavLink to="/place-to-stay">Community</NavLink>
           {mobile <= 600 && (
             <MenuBarBtn>
               <ButtonH
@@ -45,8 +45,8 @@ function Header({ setModal }) {
       <Links>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/place-to-stay">Place to stay</NavLink>
-        <NavLink>NFTs</NavLink>
-        <NavLink>Community</NavLink>
+        <NavLink to="/place-to-stay">NFTs</NavLink>
+        <NavLink to="/place-to-stay">Community</NavLink>
       </Links>
 
       <MobileMenuWrapper>
