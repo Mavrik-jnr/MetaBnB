@@ -1,4 +1,4 @@
-#Live Preview: https://metabnb-chi.vercel.app/
+# Live Preview: https://metabnb-chi.vercel.app/
 
 # Getting Started with Create React App
 
