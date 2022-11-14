@@ -59,11 +59,9 @@ const BannerImageStew = styled.div`
   display: flex;
 
   justify-content: center;
-  /* background-color: red; */
+
   height: 100%;
 
-  /* po0 */
-  /* width: 100%; */
   @media screen and (max-width: 1175px) {
     align-self: flex-end;
   }
@@ -72,7 +70,6 @@ const BannerImageStew = styled.div`
     padding: 0px;
   }
   & img {
-    /* position: absolute; */
     width: clamp(350px, 53vw, 700px);
   }
 `;

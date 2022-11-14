@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import styled from "styled-components";
@@ -41,7 +41,9 @@ function Header({ setModal }) {
           )}
         </MenuBar>
       )}
-      <img style={{ flexShrink: 1 }} src={LogoImg} alt="Logo" />
+      <Link to="/">
+        <img style={{ flexShrink: 1 }} src={LogoImg} alt="Logo" />
+      </Link>
       <Links>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/place-to-stay">Place to stay</NavLink>
