@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Section = styled.section`
+export const Section = styled.section`
   display: flex;
   flex-direction: column;
   /* align-items: center; */
@@ -14,7 +14,8 @@ export const HeroSection = styled(Section)`
   /* align-items: flex-start; */
   /* justify-content: center; */
   padding-top: clamp(100px, 11vw, 160px);
-  height: 100vh;
+  /* height: 100vh; */
+  /* background-color: red; */
 `;
 export const HeroFlex = styled.div`
   display: flex;
@@ -28,4 +29,14 @@ export const HeroFlex = styled.div`
     flex-direction: column;
     padding-right: 0px;
   }
+`;
+
+export const BannerWrapper = styled(Section)`
+  background-color: var(--primary);
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

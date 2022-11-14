@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import CloseIcon from "@mui/icons-material/Close";
 import Header from "./components/Header";
-import { HeroFlex, HeroSection } from "./styled-components/Layout.styles";
+import {
+  HeroFlex,
+  HeroSection,
+  Section,
+} from "./styled-components/Layout.styles";
 import hero1 from "./images/hero/hero1.svg";
 import hero2 from "./images/hero/hero2.svg";
 import hero3 from "./images/hero/hero3.svg";
@@ -10,8 +14,14 @@ import { useEffect, useState } from "react";
 import Search from "./components/Search";
 import MM from "./images/Modal/Fox.svg";
 import WC from "./images/Modal/WalletConnect.svg";
-import chevron from "./images/Modal/Chevron.svg";
+import aise2 from "./images/NFT/aise 2.png";
 import { ChevronRight } from "@mui/icons-material";
+import Footer from "./components/Footer";
+import NftCard from "./components/NftCard";
+import Banner from "./components/Banner";
+import mbt from "./images/banner/mbt.svg";
+import mm from "./images/banner/mm.svg";
+import os from "./images/banner/os.svg";
 
 function App() {
   const [scrollH, setscrollH] = useState();
@@ -94,6 +104,26 @@ function App() {
           </HeroImageWrapper>
         </HeroFlex>
       </HeroSection>
+      <Companies>
+        <img src={mbt} alt="" />
+        <img src={mm} alt="" />
+        <img src={os} alt="" />
+      </Companies>
+      <NftWrapper>
+        <h2>Inspiration for your next adventure</h2>
+        <NftGrid>
+          <NftCard img={aise2} />
+          <NftCard img={aise2} />
+          <NftCard img={aise2} />
+          <NftCard img={aise2} />
+          <NftCard img={aise2} />
+          <NftCard img={aise2} />
+          <NftCard img={aise2} />
+          <NftCard img={aise2} />
+        </NftGrid>
+      </NftWrapper>
+      <Banner />
+      <Footer />
     </AppBody>
   );
 }
@@ -249,4 +279,32 @@ const ModalWallet = styled.div`
     color: #959da6;
     font-size: 32px;
   }
+`;
+const Companies = styled.div`
+  display: flex;
+  justify-content: space-around;
+  margin-top: 100px;
+  background-color: var(--primary);
+  width: 100%;
+  padding: 10px 100px;
+  & img {
+    width: clamp(100px, 20vw, 100%);
+  }
+`;
+
+const NftWrapper = styled(Section)`
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+  margin-top: 60px;
+  & h2 {
+    /* margin-bottom: 60px; */
+  }
+`;
+
+const NftGrid = styled.div`
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
 `;
