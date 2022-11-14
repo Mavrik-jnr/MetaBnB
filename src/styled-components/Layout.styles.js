@@ -13,7 +13,7 @@ export const HeroSection = styled(Section)`
 
   /* align-items: flex-start; */
   /* justify-content: center; */
-  padding-top: clamp(100px, 20vw, 216px);
+  padding-top: clamp(150px, 20vw, 216px);
   /* height: 100vh; */
   /* background-color: red; */
 `;
