@@ -32,6 +32,7 @@ export const HeroFlex = styled.div`
 `;
 
 export const BannerWrapper = styled(Section)`
+  display: flex;
   background-color: var(--primary);
   margin-top: 60px;
   /* height: 100vh; */
@@ -40,7 +41,7 @@ export const BannerWrapper = styled(Section)`
   align-items: center;
   justify-content: center;
   @media screen and (max-width: 1175px) {
-    align-items: stretch;
-    justify-content: flex-start;
+    /* align-items: center; */
+    justify-content: center;
   }
 `;
