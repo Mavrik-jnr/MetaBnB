@@ -10,7 +10,7 @@ import hero1 from "./images/hero/hero1.svg";
 import hero2 from "./images/hero/hero2.svg";
 import hero3 from "./images/hero/hero3.svg";
 import hero4 from "./images/hero/hero4.svg";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Search from "./components/Search";
 import MM from "./images/Modal/Fox.svg";
 import WC from "./images/Modal/WalletConnect.svg";
@@ -22,10 +22,21 @@ import Banner from "./components/Banner";
 import mbt from "./images/banner/mbt.svg";
 import mm from "./images/banner/mm.svg";
 import os from "./images/banner/os.svg";
+import settings from "./images/Modal/setting.svg";
+import { Link, NavLink, Route, Routes } from "react-router-dom";
 
 function App() {
   const [scrollH, setscrollH] = useState();
   const [isModalOpen, setModal] = useState(false);
+  const [prevButton, setprevButton] = useState(null);
+  const handleActive = (e) => {
+    e.preventDefault();
+    e.target.classList.add("active");
+    if (prevButton !== null) {
+      prevButton.classList.remove("active");
+    }
+    setprevButton(e.target);
+  };
   const handleScroll = () => {
     setscrollH(window.scrollY);
   };
@@ -77,58 +88,160 @@ function App() {
           </Modal>
         </ModalWrapper>
       )}
-      <HeroSection>
-        <HeroFlex>
-          <HeroTextWrapper>
-            <h1>
-              Rent a <span>Place</span> away from <span>Home</span> in the{" "}
-              <span>Metaverse</span>
-            </h1>
-            <h3>
-              we provide you access to luxury and affordable houses in the
-              metaverse, get a chance to turn your imagination to reality at
-              your comfort zone
-            </h3>
-            <Search />
-          </HeroTextWrapper>
-          <HeroImageWrapper className="">
-            <Left>
-              <img src={hero1} alt="" />
-              <img src={hero3} alt="" />
-            </Left>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <HeroSection>
+                <HeroFlex>
+                  <HeroTextWrapper>
+                    <h1>
+                      Rent a <span>Place</span> away from <span>Home</span> in
+                      the <span>Metaverse</span>
+                    </h1>
+                    <h3>
+                      we provide you access to luxury and affordable houses in
+                      the metaverse, get a chance to turn your imagination to
+                      reality at your comfort zone
+                    </h3>
+                    <Search />
+                  </HeroTextWrapper>
+                  <HeroImageWrapper className="">
+                    <Left>
+                      <img src={hero1} alt="" />
+                      <img src={hero3} alt="" />
+                    </Left>
 
-            <Right>
-              <img src={hero2} alt="" />
-              <img src={hero4} alt="" />
-            </Right>
-          </HeroImageWrapper>
-        </HeroFlex>
-      </HeroSection>
-      <Companies>
-        <img src={mbt} alt="" />
-        <img src={mm} alt="" />
-        <img src={os} alt="" />
-      </Companies>
-      <NftWrapper>
-        <h2>Inspiration for your next adventure</h2>
-        <NftGrid>
-          <NftCard img={aise2} />
-          <NftCard img={aise2} />
-          <NftCard img={aise2} />
-          <NftCard img={aise2} />
-          <NftCard img={aise2} />
-          <NftCard img={aise2} />
-          <NftCard img={aise2} />
-          <NftCard img={aise2} />
-        </NftGrid>
-      </NftWrapper>
-      <Banner />
+                    <Right>
+                      <img src={hero2} alt="" />
+                      <img src={hero4} alt="" />
+                    </Right>
+                  </HeroImageWrapper>
+                </HeroFlex>
+              </HeroSection>
+              <Companies>
+                <img src={mbt} alt="" />
+                <img src={mm} alt="" />
+                <img src={os} alt="" />
+              </Companies>
+              <NftWrapper>
+                <h2>Inspiration for your next adventure</h2>
+                <NftGrid>
+                  <NftCard img={aise2} />
+                  <NftCard img={aise2} />
+                  <NftCard img={aise2} />
+                  <NftCard img={aise2} />
+                  <NftCard img={aise2} />
+                  <NftCard img={aise2} />
+                  <NftCard img={aise2} />
+                  <NftCard img={aise2} />
+                </NftGrid>
+              </NftWrapper>
+              <Banner />
+            </>
+          }
+        />
+
+        <Route
+          path="/place-to-stay"
+          element={
+            <PlaceToStay>
+              <Filter>
+                <Link
+                  to="/place-to-stay/resturant"
+                  // className={(isActive) => (isActive ? "active" : "not")}
+                  onClick={(e) => {
+                    handleActive(e);
+                  }}
+                >
+                  Resturant
+                </Link>
+                <Link
+                  onClick={(e) => {
+                    handleActive(e);
+                  }}
+                >
+                  Cottage
+                </Link>
+                <Link
+                  onClick={(e) => {
+                    handleActive(e);
+                  }}
+                >
+                  Castle
+                </Link>
+                <Link
+                  onClick={(e) => {
+                    handleActive(e);
+                  }}
+                >
+                  fantast city
+                </Link>
+                <Link
+                  onClick={(e) => {
+                    handleActive(e);
+                  }}
+                >
+                  Cabins
+                </Link>
+                <Link
+                  onClick={(e) => {
+                    handleActive(e);
+                  }}
+                >
+                  Off-grid
+                </Link>
+                <Link
+                  onClick={(e) => {
+                    handleActive(e);
+                  }}
+                >
+                  Farm
+                </Link>
+                <FilterBtn>
+                  Location <img src={settings} alt="" />
+                </FilterBtn>
+              </Filter>
+              <NftWrapper2>
+                <NftGrid>
+                  <NftCard img={aise2} />
+                  <NftCard img={aise2} />
+                  <NftCard img={aise2} />
+                  <NftCard img={aise2} />
+                  <NftCard img={aise2} />
+                  <NftCard img={aise2} />
+                  <NftCard img={aise2} />
+                  <NftCard img={aise2} />
+                  <NftCard img={aise2} />
+                  <NftCard img={aise2} />
+                  <NftCard img={aise2} />
+                  <NftCard img={aise2} />
+                  <NftCard img={aise2} />
+                  <NftCard img={aise2} />
+                  <NftCard img={aise2} />
+                  <NftCard img={aise2} />
+                </NftGrid>
+              </NftWrapper2>
+            </PlaceToStay>
+          }
+        />
+      </Routes>
+
       <Footer />
     </AppBody>
   );
 }
 
 export default App;
+
+const PlaceToStay = styled(Section)`
+  flex-direction: column;
+  padding-top: clamp(150px, 20vw, 216px);
+  align-items: center;
+
+  width: 100%;
+`;
 
 const NftWrapper = styled(Section)`
   display: flex;
@@ -142,6 +255,40 @@ const NftWrapper = styled(Section)`
   & h2 {
     text-align: center;
   }
+`;
+const NftWrapper2 = styled(NftWrapper)`
+  padding-bottom: 100px;
+`;
+
+const Filter = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 86%;
+  align-items: center;
+  & a {
+    padding: 8px;
+  }
+  .active {
+    background-color: #ece3ef;
+    color: var(--primary);
+  }
+
+  @media screen and (max-width: 1200px) {
+    & button {
+      margin-left: 0px;
+    }
+  }
+`;
+const FilterBtn = styled.button`
+  border-radius: 8px;
+  display: flex;
+  outline: none;
+  border: 1px solid #b4b4b4;
+  background-color: transparent;
+  margin-left: 35px;
+  padding: 14px 13px;
+  gap: 40px;
 `;
 
 const NftGrid = styled.div`
@@ -169,7 +316,7 @@ const AppBody = styled.main`
 `;
 
 const HeaderWrapper = styled.div`
-  position: ${(props) => (props.scrollH > 21.5 ? "fixed" : "relative")};
+  position: ${(props) => (props.scrollH > 21.5 ? "fixed" : "absolute")};
   top: ${(props) => (props.scrollH > 21.5 ? "0px" : "21.5px")};
   display: flex;
   width: 100%;
