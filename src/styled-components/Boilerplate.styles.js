@@ -22,7 +22,7 @@ export const Boilerplate = createGlobalStyle`
     --wallet-fill:#F8F9FA;
 }
 h1{
-    font-size: 56px;
+    font-size: clamp(48px, 5vw, 56px);
     // To impliment clamp
     line-height:1.4;
     letter-spacing:-2%;
@@ -31,12 +31,12 @@ h1{
     
 }
 h2{
-    font-size:48px;
+    font-size: clamp(32px, 2vw, 48px);
     line-height:1.4;
     margin:0px;
 }
 h3 {
-    font-size:24px;
+    font-size: clamp(18px, 2vw, 24px);
     line-height:1.4;
     font-weight:400;
     margin:0px;
@@ -67,7 +67,7 @@ p{
     margin:0px;
 }
 span{
-    font-size: 56px;
+    font-size: clamp(48px, 5vw, 56px);
     line-height:1.4;
     letter-spacing:-2%;
     font-weight: 700;
