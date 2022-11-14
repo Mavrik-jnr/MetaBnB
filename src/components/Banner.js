@@ -58,6 +58,9 @@ const BannerText = styled.div`
     & button {
       width: 70%;
     }
+    & h2 {
+      font-size: 40px;
+    }
   }
   @media screen and (max-width: 900px) {
     width: 100%;
@@ -79,8 +82,13 @@ const BannerImageStew = styled.div`
     align-items: center;
     padding-right: 30px;
   }
+  @media screen and (max-width: 400px) {
+    align-items: center;
+
+    padding-right: 0px;
+  }
 
   & img {
-    width: clamp(350px, 53vw, 700px);
+    width: clamp(290px, 53vw, 700px);
   }
 `;

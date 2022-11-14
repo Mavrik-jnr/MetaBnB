@@ -104,10 +104,7 @@ const HeaderWrapper = styled.div`
 const Modal = styled.div`
   display: grid;
   grid-template-rows: 20% 80%;
-
-  /* position: fixed; */
   z-index: 1000;
-
   background-color: white;
   width: min(80%, 600px);
   height: min(40%, max-content);
@@ -147,6 +144,9 @@ const ModalWalletWrapper = styled.div`
   display: grid;
   gap: 16px;
   padding: 32px;
+  @media screen and (max-width: 400px) {
+    padding: 16px;
+  }
 `;
 const ModalWallet = styled.div`
   display: flex;
@@ -156,6 +156,9 @@ const ModalWallet = styled.div`
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  @media screen and (max-width: 400px) {
+    padding: 4px;
+  }
 
   &:hover {
     border: 1px solid #959da6;
@@ -171,10 +174,15 @@ const ModalWallet = styled.div`
   & h4 {
     font-weight: 600;
     color: black;
+    @media screen and (max-width: 400px) {
+      font-size: 16px;
+    }
   }
   & svg {
-    /* width: 5%; */
     color: #959da6;
     font-size: 32px;
+    @media screen and (max-width: 400px) {
+      font-size: 24px;
+    }
   }
 `;

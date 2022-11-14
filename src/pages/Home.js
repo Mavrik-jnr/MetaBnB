@@ -126,7 +126,6 @@ const HeroTextWrapper = styled.div`
   flex-shrink: 1;
   flex-direction: column;
   gap: 48px;
-  /* align-items: flex-start; */
 `;
 const Companies = styled.div`
   display: flex;
@@ -134,10 +133,13 @@ const Companies = styled.div`
   margin-top: 100px;
   background-color: var(--primary);
   width: 100%;
-  gap: 24px;
+  gap: clamp(8px, 3vw, 24px);
   padding: 10px 100px;
   & img {
     width: clamp(100px, 20vw, 100%);
+  }
+  @media screen and (max-width: 320px) {
+    flex-direction: column;
   }
 `;
 
@@ -165,7 +167,7 @@ export const NftWrapper = styled(Section)`
 
   margin-top: 60px;
   box-sizing: border-box;
-  /* width: 100%; */
+
   & h2 {
     text-align: center;
   }

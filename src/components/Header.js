@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import styled from "styled-components";
-import Button, { PrimaryButton } from "./Button";
+import { PrimaryButton } from "./Button";
 import LogoImg from "../images/Logo.svg";
 
 function Header({ setModal }) {
@@ -123,6 +123,9 @@ const FlexHeader = styled.header`
 
   @media screen and (max-width: 1175px) {
     justify-content: space-between;
+    & img {
+      width: 80%;
+    }
   }
 `;
 const Links = styled.div`
@@ -196,6 +199,10 @@ const MenuBar = styled.div`
   &a:last-child {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+  }
+  @media screen and (max-width: 1175px) {
+    width: 250px;
+    right: 0px;
   }
 `;
 
