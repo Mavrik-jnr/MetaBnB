@@ -39,7 +39,7 @@ const BannerContent = styled.div`
   }
 `;
 const BannerText = styled.div`
-  width: 40%;
+  width: 50%;
   & h2 {
     color: white;
   }
@@ -53,6 +53,16 @@ const BannerText = styled.div`
   }
   @media screen and (max-width: 1175px) {
     width: 70%;
+    /* text-align: center; */
+    align-self: flex-start;
+    & button {
+      width: 70%;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    width: 100%;
+    text-align: center;
+    align-self: flex-start;
   }
 `;
 const BannerImageStew = styled.div`
@@ -66,9 +76,10 @@ const BannerImageStew = styled.div`
     align-self: flex-end;
   }
   @media screen and (max-width: 900px) {
-    align-items: flex-end;
-    padding: 0px;
+    align-items: center;
+    padding-right: 30px;
   }
+
   & img {
     width: clamp(350px, 53vw, 700px);
   }

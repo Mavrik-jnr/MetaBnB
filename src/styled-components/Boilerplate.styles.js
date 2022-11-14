@@ -31,12 +31,12 @@ h1{
     
 }
 h2{
-    font-size: clamp(32px, 2vw, 48px);
+    font-size: clamp(32px, 5vw, 48px);
     line-height:1.4;
     margin:0px;
 }
 h3 {
-    font-size: clamp(18px, 2vw, 24px);
+    font-size: clamp(18px, 5vw, 24px);
     line-height:1.4;
     font-weight:400;
     margin:0px;
