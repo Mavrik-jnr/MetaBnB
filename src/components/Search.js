@@ -1,13 +1,19 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import styled from "styled-components";
 import { PrimaryButton } from "./Button";
 
 function Search() {
+  const navigate = useNavigate();
+
   return (
     <>
       <InputWrapper>
         <Input type="text" placeholder="Search for location" />
-        <SearchButton>Search</SearchButton>
+        <SearchButton onClick={() => navigate("/place-to-stay")}>
+          Search
+        </SearchButton>
       </InputWrapper>
     </>
   );
