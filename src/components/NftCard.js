@@ -27,9 +27,7 @@ function NftCard({ img }) {
       <Desc>
         <Upper>
           <p>Desert king</p>
-          <p>
-            <span>1MBT</span> per night
-          </p>
+          <p>1MBT per night</p>
         </Upper>
         <Lower>
           <p>2345km away</p>
@@ -81,26 +79,16 @@ const Desc = styled.div`
     margin: 0px;
     padding: 0px;
   }
-
-  & :first-child,
-  & :last-child {
-  }
 `;
 
 const Upper = styled.div`
-  & span {
+  & :last-child {
     font-size: 12px;
-    display: inline;
-    margin: 0px;
-    padding: 0px;
-    letter-spacing: 0px;
-
-    color: var(--font-body);
+    font-weight: 700;
   }
   & p {
     font-size: 12px;
   }
-  font-size: 12px;
   /* font-size: clamp(8px, 3vw, 12px); */
   display: flex;
   /* flex-direction: column; */
