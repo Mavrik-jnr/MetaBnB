@@ -25,14 +25,16 @@ function NftCard({ img }) {
         />
       </Favourite>
       <Desc>
-        <div>
+        <Upper>
           <p>Desert king</p>
-          <p>1MBT per night</p>
-        </div>
-        <div>
+          <p>
+            <span>1MBT</span> per night
+          </p>
+        </Upper>
+        <Lower>
           <p>2345km away</p>
           <p>available for 2weeks stay</p>
-        </div>
+        </Lower>
       </Desc>
       <Ratings>
         <img src={ratings} alt="" />
@@ -66,11 +68,6 @@ const Favourite = styled.div`
 
   right: 30px;
   bottom: 85%;
-  & svg {
-    font-size: 25px;
-    /* background-color: #d7d7d7; */
-    fill: green;
-  }
 `;
 
 const Desc = styled.div`
@@ -80,14 +77,48 @@ const Desc = styled.div`
   margin-top: 16px;
   gap: 10px;
 
+  & strong {
+    margin: 0px;
+    padding: 0px;
+  }
+
   & :first-child,
   & :last-child {
-    font-size: 12px;
-    /* font-size: clamp(8px, 3vw, 12px); */
-    display: flex;
-    gap: 25px;
-    justify-content: space-between;
   }
+`;
+
+const Upper = styled.div`
+  & span {
+    font-size: 12px;
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+    letter-spacing: 0px;
+
+    color: var(--font-body);
+  }
+  & p {
+    font-size: 12px;
+  }
+  font-size: 12px;
+  /* font-size: clamp(8px, 3vw, 12px); */
+  display: flex;
+  /* flex-direction: column; */
+  gap: 25px;
+  justify-content: space-between;
+`;
+const Lower = styled.div`
+  & p {
+    font-size: 12px;
+  }
+  & :last-child {
+    text-align: right;
+  }
+  /* font-size: clamp(8px, 3vw, 12px); */
+  display: flex;
+  /* flex-direction: column; */
+  gap: 30px;
+  justify-content: space-between;
 `;
 
 const NftWrapper = styled.div`
