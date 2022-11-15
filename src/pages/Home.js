@@ -151,10 +151,10 @@ export const NftGrid = styled.div`
   grid-template-columns: repeat(4, 1fr);
   align-content: center;
   justify-items: center;
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1024px) {
     grid-template-columns: repeat(2, auto);
   }
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 480px) {
     grid-template-columns: repeat(1, auto);
   }
 `;

@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import styled from "styled-components";
 import heart from "../images/heart.svg";
 import ratings from "../images/rating.svg";
@@ -52,8 +50,9 @@ const CardWrapper = styled.div`
   border: 1px solid #d7d7d7;
   padding: 16px;
   border-radius: 15px;
-  width: clamp(245px, 100%, 350px);
-  height: 372px;
+  width: clamp(210px, 100%, 300px);
+  padding: clamp(0px, 4%, 16px);
+  height: clamp(340px, 2vw, 372px);
 `;
 const Ratings = styled.div`
   margin-top: 9px;
@@ -77,12 +76,16 @@ const Favourite = styled.div`
 const Desc = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
   margin-top: 16px;
   gap: 10px;
+
   & :first-child,
   & :last-child {
     font-size: 12px;
+    /* font-size: clamp(8px, 3vw, 12px); */
     display: flex;
+    gap: 25px;
     justify-content: space-between;
   }
 `;
