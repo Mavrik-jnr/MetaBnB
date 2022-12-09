@@ -5,7 +5,7 @@ export const Section = styled.section`
   /* flex-direction: column; */
   /* align-items: center; */
   width: 86%;
-  /* max-width: 1240px; */
+  max-width: 1440px;
 `;
 export const HeroSection = styled(Section)`
   /* display: flex; */
@@ -37,6 +37,7 @@ export const BannerWrapper = styled(Section)`
   margin-top: 60px;
   /* height: 100vh; */
   width: 100%;
+  max-width: 100%;
 
   align-items: center;
   justify-content: center;

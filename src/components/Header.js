@@ -116,7 +116,7 @@ export default Header;
 const FlexHeader = styled.header`
   display: flex;
   position: relative;
-
+  max-width: 1440px;
   align-items: center;
 
   width: 86%;

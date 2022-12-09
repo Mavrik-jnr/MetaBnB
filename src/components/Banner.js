@@ -33,6 +33,7 @@ const BannerContent = styled.div`
   width: 86%;
   padding-top: 100px;
   padding-bottom: 100px;
+  max-width: 1440px;
   justify-content: space-between;
   @media screen and (max-width: 1175px) {
     flex-direction: column;

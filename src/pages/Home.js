@@ -53,11 +53,13 @@ function Home() {
           </HeroImageWrapper>
         </HeroFlex>
       </HeroSection>
-      <Companies>
-        <img src={mbt} alt="" />
-        <img src={mm} alt="" />
-        <img src={os} alt="" />
-      </Companies>
+      <CompaniesWrapper>
+        <Companies>
+          <img src={mbt} alt="" />
+          <img src={mm} alt="" />
+          <img src={os} alt="" />
+        </Companies>
+      </CompaniesWrapper>
       <NftWrapper>
         <h2>Inspiration for your next adventure</h2>
         <NftGrid>
@@ -129,18 +131,30 @@ const HeroTextWrapper = styled.div`
 `;
 const Companies = styled.div`
   display: flex;
+  width: 100%;
+  max-width: 1440px;
   justify-content: space-around;
+
+  background-color: var(--primary);
+
+  gap: clamp(8px, 3vw, 24px);
+  padding: 16px 0px;
+  & img {
+    width: clamp(100px, 20vw, 28%);
+  }
+  @media screen and (max-width: 360px) {
+    padding: 10px 100px;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const CompaniesWrapper = styled.div`
+  display: flex;
+  justify-content: center;
   margin-top: 100px;
   background-color: var(--primary);
   width: 100%;
-  gap: clamp(8px, 3vw, 24px);
-  padding: 10px 100px;
-  & img {
-    width: clamp(100px, 20vw, 100%);
-  }
-  @media screen and (max-width: 320px) {
-    flex-direction: column;
-  }
 `;
 
 export const NftGrid = styled.div`

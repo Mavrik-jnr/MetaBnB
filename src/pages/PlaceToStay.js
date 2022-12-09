@@ -126,6 +126,7 @@ const PlaceToStayWrapper = styled(Section)`
 
 const NftWrapper2 = styled(NftWrapper)`
   padding-bottom: 100px;
+  max-width: 1440px;
 `;
 
 const Filter = styled.div`
